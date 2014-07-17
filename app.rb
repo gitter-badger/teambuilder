@@ -12,7 +12,8 @@ require "json"
   string      :avatar_url
 end rescue nil
 
-class Member < Sequel::Model end
+class Member < Sequel::Model 
+end
 
 set :public_folder, 'public'
 
@@ -24,6 +25,12 @@ get '/members' do
   content_type :json
   @members = Member.all
   @members.map(&:values).to_json
+end
+
+get '/members/:id' do
+  content_type :json
+  @member = Member.find(id: params[:id].to_i)
+  @member.values.to_json
 end
 
 post '/members' do
