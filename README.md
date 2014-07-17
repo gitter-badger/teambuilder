@@ -1,7 +1,7 @@
 teambuilder
 ===========
 Features:
- 1. Browse development teams.
+ 1. Browse development teams
  
    On home page display two sections for specific teams (Front-End, Back-End).
 
