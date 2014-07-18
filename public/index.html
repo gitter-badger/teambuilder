@@ -4,28 +4,71 @@
 		<title>Teambuilder</title>
 		<link rel="stylesheet" href="css/styles.css">
 		<link rel="stylesheet" href="css/normalize.css">
+
+
+
 	</head>
 	<body>
-				<div class="block">
-					<label for="playername">Name</label>
-					<input type="text" id="matename">
+		<header id="header">
+				<div id="addButton">+ Add new member</div>
+				Teambuilder
+		</header>
+		<section id="main" class="clear-fix">
+			<section class="membersCollection-class" id="front-end">
+				<h1>Front-end</h1>
+				<div class="member-class">
+					<div class="imgBox-class"></div>
+					<div class="nameBox-class">Johnny Cash</div>
+					<div class="destroyButton-class"></div>
 				</div>
 
-				<div class="block">
-					<label for="url">Image URL</label>
-					<input type="text" id="url">
+				<div class="member-class">
+					<div class="imgBox-class"></div>
+					<div class="nameBox-class">Johnny Cash</div>
+					<div class="destroyButton-class"></div>
 				</div>
 
-				<div class="block">
-					<input type="radio" name="prof" value="front-end"> Front-end
-   					<input type="radio" name="prof" value="back-end"> Back-end
-   				</div>
+				<div class="member-class">
+					<div class="imgBox-class"></div>
+					<div class="nameBox-class">Johnny Cash</div>
+					<div class="destroyButton-class"></div>
+				</div>
 
-   				<button type="button" id="save">Save</button>
+			</section>
+			<section class="membersCollection-class" id="back-end">
+				<h1>back-end</h1>
+				<div class="member-class">
+					<div class="imgBox-class"></div>
+					<div class="nameBox-class">Johnny Cash</div>
+					<div class="destroyButton-class"></div>
+				</div>
+				<div class="member-class">
+					<div class="imgBox-class"></div>
+					<div class="nameBox-class">Johnny Cash</div>
+					<div class="destroyButton-class"></div>
+				</div>				
+			</section>
 
+
+		</section>
+		<footer id="footer"></footer>
+
+		<script type="text/template" id="member-template">
+				<div class="member-class">
+					<div class="imgBox-class"><img src="<%= avatar_url %>" alt=""></div>
+					<div class="nameBox-class"><%= name %></div>
+					<div class="destroyButton-class"></div>
+				</div>	
+		</script>	
 
 		<script src="js/jquery-1.7.2.js"></script>
 		<script src="js/underscore.js"></script>
 		<script src="js/backbone.js"></script>
+
+		<script src="js/models/member.js"></script>
+		<script src="js/collections/members.js"></script>
+		<script src="js/views/member_view.js"></script>
+
+
 	</body>
 </html>

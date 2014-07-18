@@ -1,0 +1,187 @@
+/*
+*
+* Reset and normalize styles
+*
+*/
+
+header, footer, div, ul, input, section
+{
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: 	border-box;
+	box-sizing:			border-box;
+}
+
+.clear-fix:after
+{
+	content:'';
+	display:block;
+	clear:both;
+}
+
+html, body
+{
+	height:100%;
+}
+
+/*
+*
+* Header and footer styles
+*
+*/
+
+#header
+{
+	width: 100%;
+	min-width: 1024px;
+	height: 150px;
+	padding: 60px 32px;
+	background: #eee;
+	text-align: center;
+	color: #909090;
+	font-size: 18px;
+	font-weight: bold;
+	text-transform: uppercase;
+	border-bottom:1px solid #F28E58;
+}
+
+#addButton
+{
+	display: inline-block;
+	width: 220px;
+	height: 40px;
+	background: #F28E58;
+	margin-top: 30px;
+	cursor: pointer;
+	padding: 12px;
+	text-align: center;
+	color: #fff;
+	font-weight: bold;
+	position: absolute;
+	top: 20px;
+	left: 32px;
+	text-transform:capitalize;
+	font-size:16px;
+}
+
+#addButton:hover
+{
+	opacity:0.9;
+}
+
+#footer
+{
+	width: 100%;
+	min-width: 1024px;
+	height: 40px;
+	padding: 10px 32px;
+	background: #eee;
+	text-align: center;
+	color: #909090;
+	font-size: 18px;
+	font-weight: bold;
+	text-transform: uppercase;
+	border-top:1px solid #F28E58;
+}
+
+/*
+*
+* Content styles
+*
+*/
+
+
+#main
+{
+	min-height:80%;
+	width:1024px;
+	margin:0 auto;
+	padding:40px 32px 20px;
+}
+
+.membersCollection-class
+{
+	position:relative;
+	float:left;
+	word-spacing: -1;
+	padding:20px 15px;
+	width:468px;
+	border:2px solid #eee;
+}
+
+#front-end
+{
+	margin-right:20px;
+}
+
+.membersCollection-class h1
+{
+	padding: 0 3px;
+	font-size: 14px;
+	font-weight: normal;
+	position: absolute;
+	top: -18px;
+	left: 20px;
+	background: #fff;
+	color: #F28E58;
+	text-transform: uppercase;
+}
+
+.member-class
+{
+	width: 100%;
+	height: 100px;
+	padding: 10px;
+	margin:10px 0;
+	position:relative;
+	-webkit-box-shadow: 0px 1px 2px 0px rgba(50, 50, 50, 0.25);
+	-moz-box-shadow: 	0px 1px 2px 0px rgba(50, 50, 50, 0.25);
+	box-shadow: 		0px 1px 2px 0px rgba(50, 50, 50, 0.25);
+}
+
+.member-class:hover
+{
+	border: 1px solid #F28E58;
+}
+
+.imgBox-class
+{
+	display:inline-block;
+	word-spacing: -1;
+	width: 80px;
+	height: 80px;
+	background: #eee;
+}
+
+.nameBox-class
+{
+	display: inline-block;
+	vertical-align: top;
+	height: 80px;
+	padding: 30px 15px;
+	color: #909090;
+	font-weight: bold;
+	cursor:default;
+}
+
+.destroyButton-class
+{
+	width: 30px;
+	height: 30px;
+	background: url(../i/closeicon.png) no-repeat;
+	position: absolute;
+	top: 5px;
+	right: 5px;
+	background-size: 80% auto;
+	background-position: 4px 4px;
+	-webkit-box-shadow: 0px 1px 2px 0px rgba(50, 50, 50, 0.25);
+	-moz-box-shadow: 	0px 1px 2px 0px rgba(50, 50, 50, 0.25);
+	box-shadow: 		0px 1px 2px 0px rgba(50, 50, 50, 0.25);
+	cursor:pointer;
+}
+
+.destroyButton-class:hover
+{
+	-webkit-box-shadow: inset 0px 1px 1px 0px rgba(50, 50, 50, 0.25);
+	-moz-box-shadow: 	inset 0px 1px 1px 0px rgba(50, 50, 50, 0.25);
+	box-shadow: 		inset 0px 1px 1px 0px rgba(50, 50, 50, 0.25);
+}
