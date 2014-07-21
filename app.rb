@@ -43,6 +43,7 @@ end
 put '/members/:id' do
   content_type :json
   params_json = JSON.parse(request.body.read)
+  params_json.delete('id')
   @member = Member.find(id: params[:id].to_i)
   @member.update(params_json)
   @member.values.to_json
