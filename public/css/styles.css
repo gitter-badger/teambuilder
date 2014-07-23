@@ -44,11 +44,10 @@ html, body
 	border-bottom:1px solid #F28E58;
 }
 
-#addButton
+.button
 {
-	display: inline-block;
 	width: 220px;
-	height: 40px;
+	text-decoration: none;
 	background: #F28E58;
 	margin-top: 30px;
 	cursor: pointer;
@@ -56,16 +55,27 @@ html, body
 	text-align: center;
 	color: #fff;
 	font-weight: bold;
+	text-transform: capitalize;
+	font-size: 16px;
+}
+
+.button:hover
+{
+	opacity:0.9;
+}
+
+#addButton, #backButton
+{
 	position: absolute;
 	top: 20px;
 	left: 32px;
-	text-transform:capitalize;
-	font-size:16px;
 }
 
-#addButton:hover
+#container
 {
-	opacity:0.9;
+	padding:30px 10px;
+	width:1024px;
+	margin:0 auto;
 }
 
 #footer
@@ -90,20 +100,10 @@ html, body
 */
 
 
-#main
-{
-	min-height:80%;
-	width:1024px;
-	margin:0 auto;
-	padding:40px 32px 20px;
-}
-
 .membersCollection-class
 {
 	position:relative;
-	float:left;
-	word-spacing: -1;
-	padding:20px 15px;
+	padding:5px 15px;
 	width:468px;
 	border:2px solid #eee;
 }
@@ -152,6 +152,12 @@ html, body
 	background: #eee;
 }
 
+.imgBox-class img
+{
+	width:80px;
+	height:80px;
+}
+
 .nameBox-class
 {
 	display: inline-block;
@@ -167,7 +173,7 @@ html, body
 {
 	width: 30px;
 	height: 30px;
-	background: url(../i/closeicon.png) no-repeat;
+	background: url(../img/closeicon.png) no-repeat;
 	position: absolute;
 	top: 5px;
 	right: 5px;
@@ -185,3 +191,39 @@ html, body
 	-moz-box-shadow: 	inset 0px 1px 1px 0px rgba(50, 50, 50, 0.25);
 	box-shadow: 		inset 0px 1px 1px 0px rgba(50, 50, 50, 0.25);
 }
+
+#form
+{
+	position:relative;
+	width: 500px;
+	margin: 10px auto;
+	padding: 50px;
+	border: 2px solid #eee;
+}
+
+#form input
+{
+	width: 220px;
+	height: 40px;
+	padding:12px;
+	color:#eee;
+	font-size:14px;
+	display: block;
+	margin: 20px auto;
+	border: 2px solid #eee;
+	color:#F28E58;
+}
+
+#form input:focus
+{
+	outline:0;
+	border: 2px solid #F28E58;
+	color:#F28E58;
+}
+
+#saveButton
+{
+
+	margin: 0 auto 20px;
+}
+

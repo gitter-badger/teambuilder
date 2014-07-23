@@ -2,18 +2,26 @@
 	'use strict';
 
 
-	var MemberView = Backbone.View.extend({
+	window.MemberView = Backbone.View.extend({
 
 		template: _.template($('#member-template').html()),
 
+
 		events: {
-			'click .destroyButton-class': 'clear'
+			"click .destroyButton-class" : "remove"
 		},
 
-		initialize: function () {
-			this.render(),
-			this.listenTo(this.model, 'change', this.render);
-			this.listenTo(this.model, 'destroy', this.remove);
+		initialize: function() {
+			this.render();
+		},
+
+
+		render: function() {		
+			this.$el.html(this.template(this.model.toJSON()));
+		},
+
+		remove: function() {
+			this.model.destroy();
 		}
 
 

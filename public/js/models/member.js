@@ -2,20 +2,26 @@
 	'use strict';
 
 
-	var Member = Backbone.Model.extend({
+	window.Member = Backbone.Model.extend({
+
+		url: function() {
+			return this.preparePath();
+		},
+
 		defaults: {
 			name: '',
 			avatar_url: 'http://',
 			team: ''
 		},
-		
-		initialize: function(){
-						alert('Hello, mr Newby');
 
-						this.on('change: name', function() {
-						console.log('Name has been changed!')
-					})
+		preparePath: function() {
+			if (this.isNew()) {
+				return '/members'
+			} else {
+				return ['/members/', this.get('id')].join('');
+			}
 		}
+
 	});
 
 
