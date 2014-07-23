@@ -1,4 +1,4 @@
-(function ($) {
+(function($) {
 	'use strict';
 
 
@@ -6,12 +6,8 @@
 
 		template: _.template($('#members-template').html()),
 
-		initialize: function() {		
-
-			window.m = this;
-
+		initialize: function() {
 			this.collection.on('remove', this.renderMembersList, this);
-
 			this.render();
 		},
 
@@ -27,7 +23,7 @@
 
 			$('#backButton').hide();
 			$('#addButton').show();
-			
+
 		},
 
 		renderMembersList: function() {
@@ -39,9 +35,11 @@
 		},
 
 		renderMember: function(member) {
-			var memberView = new window.MemberView({model: member});
+			var memberView = new window.MemberView({
+				model: member
+			});
 			memberView.render();
-            this.$el.find('#members-region').append(memberView.$el);
+			this.$el.find('#members-region').append(memberView.$el);
 		}
 
 

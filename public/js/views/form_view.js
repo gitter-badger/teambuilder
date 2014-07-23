@@ -1,4 +1,4 @@
-(function ($) {
+(function($) {
 	'use strict';
 
 
@@ -10,28 +10,31 @@
 			this.render();
 		},
 
-		render: function() {		
+		render: function() {
 			this.$el.html(this.template());
 			$('#addButton').hide();
 			$('#backButton').show();
 		},
 
 		events: {
-			"click #saveButton" : "create"
+			"click #saveButton": "create"
 		},
 
 		create: function() {
 			var name = $('#username').val(),
-			    url = $('#url').val();
+				url = $('#url').val();
 
+			var member = new window.Member({
+				'name': name,
+				'avatar_url': url
+			});
 
-
-			window.member = new window.Member({'name': name, 'avatar_url': url});
 			member.save(null, {
 				success: function(model) {
-					Backbone.history.navigate('/#/', { trigger: true });
+					Backbone.history.navigate('/#/', {
+						trigger: true
+					});
 				},
-
 				error: function() {
 					alert('Learn backbone');
 				}
