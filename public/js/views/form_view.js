@@ -12,7 +12,9 @@
 
 		render: function() {
 			this.$el.html(this.template());
-			$('#addButton').hide();
+			$('#addButton').hide(function() {
+				$('#username').focus();
+			});
 			$('#backButton').show();
 		},
 
@@ -29,20 +31,23 @@
 				'avatar_url': url
 			});
 
-			member.save(null, {
-				success: function(model) {
-					Backbone.history.navigate('/#/', {
-						trigger: true
-					});
-				},
-				error: function() {
-					alert('Learn backbone');
-				}
-			});
+			if (member.isValid()) {
 
+				member.save(null, {
+					success: function(model) {
+						Backbone.history.navigate('/#/', {
+							trigger: true
+						});
+					},
+					error: function() {
+						alert('Learn backbone');
+					}
+				});
+			} else {
+				alert(this.model.validationError);
+			}
 
-		},
-
+		}
 
 
 	});

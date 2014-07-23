@@ -38,8 +38,12 @@
 			var memberView = new window.MemberView({
 				model: member
 			});
-			memberView.render();
-			this.$el.find('#members-region').append(memberView.$el);
+			if (member.isFrontend()) {
+				memberView.render();
+				this.$el.find('#members-region').append(memberView.$el);
+			}
+
+
 		}
 
 

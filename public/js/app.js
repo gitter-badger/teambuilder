@@ -1,13 +1,14 @@
 $(document).ready(function() {
 
 
-
-
-	var height = $(window).height();
-	$('#container').css('min-height', height - 190);
+	heightInit();
 
 	new Router();
 	Backbone.history.start();
 
+	function heightInit() {
+		var height = $(window).height();
+		$('#container').css('min-height', height - 190);
+	}
 
 });
