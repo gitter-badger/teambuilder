@@ -21,6 +21,7 @@
 
 
 					var frontendMembers = collection.filterByType('frontend');
+
 					var backendMembers = collection.filterByType('backend');
 
 					var frontendMembersView = new window.MembersView({

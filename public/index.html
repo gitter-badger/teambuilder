@@ -40,12 +40,14 @@
 
 
 		<script type="text/template" id="members-template">
+				<div class="sort-buttons-wrap"><span class="straight-sort">asc</span><span class="reverse-sort">desc</span></div>
 				<h1><%= this.team %></h1>
 				<div class="members-region"></div>
 		</script>	
 
 		<script type="text/template" id="member-template">
 				<div class="imgBox-class"><img src="<%= avatar_url  %>" alt=""></div>
+				<input type="text" class="editName" placeholder="<%= name %>" value="<%= name %>"/>
 				<div class="nameBox-class"><%= name %></div>
 				<div class="destroyButton-class"></div>
 		</script>	
@@ -53,6 +55,7 @@
 		<script src="js/jquery-1.7.2.js"></script>
 		<script src="js/underscore.js"></script>
 		<script src="js/backbone.js"></script>
+		<script src="js/draglogic.js"></script>
 
 		<script src="js/models/member.js"></script>
 		<script src="js/collections/members.js"></script>

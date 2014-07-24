@@ -10,6 +10,10 @@
 
 		className: 'membersCollection-class',
 
+		events: {
+			"click .straight-sort": "sort",
+			"click .reverse-sort": "sortBy",
+		},
 
 		initialize: function(options) {
 			this.team = options.team;
@@ -38,7 +42,7 @@
 			var self = this;
 			_.each(this.collection.models, function(member, i) {
 				self.renderMember(member);
-			})
+			});
 		},
 
 		renderMember: function(member) {
@@ -47,6 +51,19 @@
 			});
 
 			this.$list.append(memberView.$el);
+		},
+
+		sort: function() {
+			console.log('Sort');
+			this.collection.comparator = 'name';
+			this.collection.sort();
+			this.render();
+		},
+
+		sortBy: function() {
+			this.collection.comparator = 'name';
+			this.collection.sort();
+			this.render();
 		}
 	});
 

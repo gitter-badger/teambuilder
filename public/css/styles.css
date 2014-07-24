@@ -106,6 +106,7 @@ html, body
 	padding:5px 15px;
 	width:468px;
 	border:2px solid #eee;
+	background: #fff;
 }
 
 #front-end
@@ -132,6 +133,7 @@ html, body
 	height: 100px;
 	padding: 10px;
 	margin:10px 0;
+	background:#fff;
 	position:relative;
 	-webkit-box-shadow: 0px 1px 2px 0px rgba(50, 50, 50, 0.25);
 	-moz-box-shadow: 	0px 1px 2px 0px rgba(50, 50, 50, 0.25);
@@ -286,4 +288,46 @@ label[for="frontend"] {
 	color: red;
 	text-transform: uppercase;
 	opacity: 0;
+}
+
+.editName {
+	display: none;
+	width: 220px;
+	height: 40px;
+	padding: 12px;
+	color: #eee;
+	color: #909090;
+	font-weight: bold;
+	border: 2px solid #eee;
+	color: #F28E58;
+	position: relative;
+	top: -60px;
+	left: 95px;
+	-webkit-box-shadow: inset 1px 1px 3px rgba(0,0,0, 0.25);
+	-moz-box-shadow: 		inset 1px 1px 3px rgba(0,0,0, 0.25);
+	box-shadow: 				inset 1px 1px 3px rgba(0,0,0, 0.25);
+}
+
+.editing .editname {
+	display: block;
+}
+
+.editing .nameBox-class {
+	display: none;
+}
+
+.sort-buttons-wrap {
+	padding: 5px;
+	text-align: right;
+	color: #aaa;
+	font-weight: bold;
+}
+
+.sort-buttons-wrap span {
+	padding:0 10px;
+	cursor:pointer;
+}
+
+.straight-sort {
+	border-right: 2px solid #F28E58;
 }
