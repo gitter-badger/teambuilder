@@ -8,13 +8,6 @@
 
 		initialize: function() {
 			this.render();
-			// $(document).keypress(function (e) {
- 		// 		var key = e.which;
-		 // 		if(key == 13)  {
-  	// 				console.log('Saved');
-  	// 			}
-			// }); 
-
 		},
 
 		render: function() {
@@ -58,7 +51,7 @@
 				});
 
 			} else {
-				alert(member.validationError);
+				$('#container').prepend('<div class="error-container">' + member.validationError + '</div>');
 			}
 
 
