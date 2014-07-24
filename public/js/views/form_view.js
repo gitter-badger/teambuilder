@@ -28,8 +28,8 @@
 		events: {
 			"click #saveButton": "create",
 			"keypress input": "createOnEnter",
-			"click #username": "removeErrorName",
-			"click #url": "removeErrorUrl"
+			"click #username": "validateName",
+			"click #url": "validateUrl"
 		},
 
 
@@ -45,17 +45,24 @@
 				'team': team
 			});
 
+
+
 			$('input').removeClass('error');
 			$('input').removeClass('correct');
 
+			if (member.isValid()) {
+				member.save(null, {
+					success: function(model) {
+						Backbone.history.navigate('/#/', {
+							trigger: true
+						});
+					}
+				});
 
-			member.save(null, {
-				success: function(model) {
-					Backbone.history.navigate('/#/', {
-						trigger: true
-					});
-				}
-			});
+			} else {
+				alert(member.validationError);
+			}
+
 
 
 		},
@@ -67,27 +74,34 @@
 			}
 		},
 
-		removeErrorName: function () {
-			var errorValue = $('#username').val();
+		validateName: function (e) {
 
-			$('#username').removeClass('error');
+			var target = $(e.currentTarget);
 
-			$('#username').on('blur', function()
+			target.removeClass('error');
+
+			target.on('blur', function()
 			{
-				var value = $('#username').val();
+				var value = target.val();
 
-				if ( value == errorValue || value.length < 4 || value.length > 30) {
-					$('#username').addClass('error');
+				if ( value.length < 4 || value.length > 30) {
+					target.addClass('error');
 				} else {
-					$('#username').addClass('correct');
-				}
+					target.addClass('correct');
+					}
 			});
 		},
 
-		removeErrorUrl: function () {
-			$('#url').removeClass('error');
-		}
+		validateUrl: function() {
 
+			target.removeClass('error');
+
+			if (urlPattern.test(attrs.avatar_url)) {
+					$('#url').addClass('correct');
+			} else {
+					target.addClass('error');
+			}
+		}
 
 	});
 
