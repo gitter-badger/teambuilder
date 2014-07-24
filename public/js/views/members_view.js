@@ -6,6 +6,11 @@
 
 		template: _.template($('#members-template').html()),
 
+		tagName: 'section',
+
+		className: 'membersCollection-class',
+
+
 		initialize: function(options) {
 			this.team = options.team;
 			this.collection.on('remove', this.renderMembersList, this);

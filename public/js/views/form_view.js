@@ -27,9 +27,7 @@
 
 		events: {
 			"click #saveButton": "create",
-			"keypress input": "createOnEnter",
-			"click #username": "validateName",
-			"click #url": "validateUrl"
+			"keypress input": "createOnEnter"
 		},
 
 
@@ -71,35 +69,6 @@
 			var ENTER_KEY = 13;
 			if (e.which === ENTER_KEY) {
 				this.create();
-			}
-		},
-
-		validateName: function (e) {
-
-			var target = $(e.currentTarget);
-
-			target.removeClass('error');
-
-			target.on('blur', function()
-			{
-				var value = target.val();
-
-				if ( value.length < 4 || value.length > 30) {
-					target.addClass('error');
-				} else {
-					target.addClass('correct');
-					}
-			});
-		},
-
-		validateUrl: function() {
-
-			target.removeClass('error');
-
-			if (urlPattern.test(attrs.avatar_url)) {
-					$('#url').addClass('correct');
-			} else {
-					target.addClass('error');
 			}
 		}
 

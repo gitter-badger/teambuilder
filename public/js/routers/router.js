@@ -10,8 +10,15 @@
 
 		index: function() {
 			var members = new window.Members();
+
+					$('#container').html('');
+					$('#container').append('<div id="frontend" class="team-container"></div>' + '<div id="backend" class="team-container"></div>');
+
+
 			members.fetch({
 				success: function(collection) {
+
+
 
 					var frontendMembers = collection.filterByType('frontend');
 					var backendMembers = collection.filterByType('backend');
