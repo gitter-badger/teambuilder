@@ -200,7 +200,19 @@ html, body
 	border: 2px solid #eee;
 }
 
-#form input
+#form h1 {
+	padding: 0 3px;
+	font-size: 14px;
+	font-weight: normal;
+	position: absolute;
+	top: -18px;
+	left: 20px;
+	background: #fff;
+	color: #F28E58;
+	text-transform: uppercase;
+}
+
+#form input[type="text"]
 {
 	width: 220px;
 	height: 40px;
@@ -213,6 +225,27 @@ html, body
 	color:#F28E58;
 }
 
+.radio-wrap {
+	width:220px;
+	margin: 20px auto 30px;
+	padding: 0 15px;
+}
+
+label[for="frontend"], label[for="backend"] {
+	color: #aaa;
+	font-size: 14px;
+}
+
+label[for="frontend"] {
+	margin-right: 15px;
+}
+
+#form input[type="radio"]
+{
+	margin-right:5px;
+	cursor: pointer;
+}
+
 #form input:focus
 {
 	outline:0;
@@ -222,7 +255,11 @@ html, body
 
 #saveButton
 {
-
 	margin: 0 auto 20px;
 }
 
+.team-container {
+	width:480px;
+	display:inline-block;
+	vertical-align:top;
+}

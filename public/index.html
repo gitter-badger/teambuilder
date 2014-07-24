@@ -14,17 +14,25 @@
 				<a class="button" href="/#/" id="backButton">Back</a>
 				Teambuilder
 		</header>
-		<div id="container"></div>
+		<div id="container">
+			<div id="frontend" class="team-container"></div>
+			<div id="backend" class="team-container"></div>
+		</div>
 		<footer id="footer"></footer>
 
 
 
 		<script type="text/template" id="form-template">
 			<form id="form">
+				<h1>Adding new user</h1>
 				<input type="text" id='username' placeholder="Enter your name" autofocus/>
 				<input type="text" id='url' placeholder="Insert avatar URL" />
-				<input type="radio" value="Front-end" checked/>
-				<input type="radio" value="Back-end" />
+				<div class="radio-wrap">			
+					<input type="radio" name="team" id="frontend" value="frontend" checked/>
+					<label for="frontend">Front-end</label>
+					<input type="radio" name="team" id="backend" value="backend" />
+					<label for="backend">Back-end</label>
+				</div>
 				<div class="button" id="saveButton">Save</div>
 			</form>
 		</script>
@@ -32,8 +40,8 @@
 
 		<script type="text/template" id="members-template">
 				<section class="membersCollection-class">
-				<h1>Front-end</h1>
-				<div id="members-region"></div>
+				<h1><%= this.team %></h1>
+				<div class="members-region"></div>
 				</section>	
 		</script>	
 

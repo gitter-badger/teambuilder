@@ -12,8 +12,12 @@
 			var members = new window.Members();
 			members.fetch({
 				success: function(collection) {
-					var membersView = new window.MembersView({collection: collection});
-					$('#container').html(membersView.$el);
+					
+					var frontendMembers = collection.filterByType('frontend');
+					var backendMembers = collection.filterByType('backend');
+
+					var frontendMembersView = new window.MembersView({collection: frontendMembers, team: 'frontend'}),
+						backendMembersView = new window.MembersView({collection: backendMembers, team: 'backend'});
 				}
 			});
 		},

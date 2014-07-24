@@ -6,7 +6,11 @@
 		url: '/members',
 
 
-		model: Member
+		model: Member,
+
+		filterByType: function(type) {
+			return new window.Members(this.where({team: type}));
+		}
 	})
 
 })(jQuery);

@@ -2,6 +2,9 @@ $(document).ready(function() {
 
 
 	heightInit();
+	$(window).resize(function() {
+		heightInit();
+	});
 
 	new Router();
 	Backbone.history.start();
