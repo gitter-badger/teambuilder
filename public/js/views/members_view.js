@@ -17,10 +17,11 @@
 			var self = this;
 
 			this.$el.html(this.template({team: this.team}));
+			$('#' + this.team).append(this.$el);
 
+			this.$list = this.$('.members-region')
+			
 			this.renderMembersList();
-
-            $('#' + this.team).append(this.template());
 
 			$('#backButton').hide();
 			$('#addButton').show();
@@ -39,12 +40,9 @@
 			var memberView = new window.MemberView({
 				model: member
 			});
-			memberView.render();
-			console.log('doing it for' + ' ' + member.attributes.name);
-			this.$el.find('.members-region').append(memberView.$el);
+
+			this.$list.append(memberView.$el);
 		}
-
-
 	});
 
 })(jQuery);

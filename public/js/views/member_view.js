@@ -1,4 +1,4 @@
-(function ($) {
+(function($) {
 	'use strict';
 
 
@@ -6,9 +6,11 @@
 
 		template: _.template($('#member-template').html()),
 
+		className: 'member-class',
+
 
 		events: {
-			"click .destroyButton-class" : "remove"
+			"click .destroyButton-class": "remove"
 		},
 
 		initialize: function() {
@@ -16,7 +18,7 @@
 		},
 
 
-		render: function() {		
+		render: function() {
 			this.$el.html(this.template(this.model.toJSON()));
 		},
 
