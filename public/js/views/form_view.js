@@ -27,7 +27,9 @@
 
 		events: {
 			"click #saveButton": "create",
-			'keypress input': 'createOnEnter'
+			"keypress input": "createOnEnter",
+			"click #username": "removeErrorName",
+			"click #url": "removeErrorUrl"
 		},
 
 
@@ -42,6 +44,9 @@
 				'avatar_url': url,
 				'team': team
 			});
+
+			$('input').removeClass('error');
+			$('input').removeClass('correct');
 
 
 			member.save(null, {
@@ -60,6 +65,27 @@
 			if (e.which === ENTER_KEY) {
 				this.create();
 			}
+		},
+
+		removeErrorName: function () {
+			var errorValue = $('#username').val();
+
+			$('#username').removeClass('error');
+
+			$('#username').on('blur', function()
+			{
+				var value = $('#username').val();
+
+				if ( value == errorValue || value.length < 4 || value.length > 30) {
+					$('#username').addClass('error');
+				} else {
+					$('#username').addClass('correct');
+				}
+			});
+		},
+
+		removeErrorUrl: function () {
+			$('#url').removeClass('error');
 		}
 
 

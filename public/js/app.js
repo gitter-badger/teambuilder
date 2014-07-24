@@ -6,8 +6,11 @@ $(document).ready(function() {
 		heightInit();
 	});
 
+
+
 	new Router();
 	Backbone.history.start();
+
 
 	function heightInit() {
 		var height = $(window).height();

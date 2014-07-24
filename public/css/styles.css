@@ -253,6 +253,16 @@ label[for="frontend"] {
 	color:#F28E58;
 }
 
+#form input.error {
+	border:1px solid red;
+	color:red;
+}
+
+#form input.correct {
+	border:1px solid green;
+	color:green;
+}
+
 #saveButton
 {
 	margin: 0 auto 20px;
