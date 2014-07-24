@@ -51,7 +51,9 @@
 				});
 
 			} else {
-				$('#container').prepend('<div class="error-container">' + member.validationError + '</div>');
+					$('.error-container').text(member.validationError);
+					$('.error-container').animate({opacity: 1}, 200);
+					$('.error-container').delay(1200).animate({opacity: 0}, 600);
 			}
 
 

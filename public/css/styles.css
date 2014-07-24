@@ -198,6 +198,8 @@ html, body
 	margin: 10px auto;
 	padding: 50px;
 	border: 2px solid #eee;
+	-webkit-transition: .8s all;
+	transition: .8s all;
 }
 
 #form h1 {
@@ -276,10 +278,12 @@ label[for="frontend"] {
 
 .error-container {
 	width: 600px;
+	height:120px;
 	margin: 20px auto;
 	text-align: center;
 	padding: 50px;
 	border: 1px solid red;
 	color: red;
 	text-transform: uppercase;
+	opacity: 0;
 }
