@@ -278,10 +278,10 @@ label[for="frontend"] {
 
 .error-container {
 	width: 600px;
-	height:120px;
+	height:80px;
 	margin: 20px auto;
 	text-align: center;
-	padding: 50px;
+	padding: 30px;
 	border: 1px solid red;
 	color: red;
 	text-transform: uppercase;
