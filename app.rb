@@ -10,6 +10,7 @@ require "json"
   string      :name
   string      :team
   string      :avatar_url
+  datetime    :created_at
 end rescue nil
 
 class Member < Sequel::Model 
@@ -36,7 +37,7 @@ end
 post '/members' do
   content_type :json
   params_json = JSON.parse(request.body.read)
-  @member = Member.create(params_json)
+  @member = Member.create(params_json.merge(created_at: Time.now))
   @member.values.to_json
 end
 
