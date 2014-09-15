@@ -12,18 +12,29 @@
 
 		events: {
 			"click .straight-sort": "sort",
-			"click .reverse-sort": "sortBy",
+			"click .reverse-sort": "sortBy"
 		},
 
 		initialize: function(options) {
+			var that = this;
 			this.team = options.team;
 			this.collection.on('remove', this.renderMembersList, this);
 			this.render();
+			this.$el.droppable({
+				accept: '.member-class',
+
+				hoverClass: 'active-drop-space',
+
+				drop: function (event, ui) {
+					that.$el.addClass("dropped-zone");
+					that.collection.on('remove', this.renderMembersList, this);
+				}
+			});
 		},
 
 
 		render: function() {
-			var self = this;
+			var that = this;
 
 			this.$el.html(this.template({team: this.team}));
 			$('#' + this.team).append(this.$el);
@@ -39,9 +50,9 @@
 
 		renderMembersList: function() {
 			this.$el.find('.members-region').html('');
-			var self = this;
+			var that = this;
 			_.each(this.collection.models, function(member, i) {
-				self.renderMember(member);
+				that.renderMember(member);
 			});
 		},
 
