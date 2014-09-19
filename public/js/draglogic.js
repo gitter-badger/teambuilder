@@ -1,6 +1,9 @@
  $(document).ready(function() {
 
-    var grabbedObj = null;
+    var grabbedObj = null,
+        grabbedObjDefaultTop,
+        grabbedObjDefaultLeft;
+
 
     $(document.body).on("mousemove", function(e) {
         if (grabbedObj) {
@@ -15,14 +18,15 @@
     	    e.preventDefault();
     	if ($(e.target).hasClass('member-class'))	{
         	grabbedObj = $(e.target);
-        	grabbedObj.css('cursor', '-webkit-grabbing');
-      	 	grabbedObj.css('position', 'absolute');
-       	 	grabbedObj.css('z-index', '9999');
+            grabbedObjDefaultTop = grabbedObj.offset().top;
+            grabbedObjDefaultleft= grabbedObj.offset().left;
+            grabbedObj.addClass('moving');
         }
     });
     
     $(document.body).on("mouseup", function (e) {
 
+        var grabbedObjteam = grabbedObj.parents('.team-container').attr('id');
 
     	var fBorderTop, fBorderLeft, fBorderRight,fBorderBottom,
     	    bBorderTop, bBorderLeft, bBorderRight,bBorderBottom,
@@ -45,6 +49,12 @@
     	
     	if (objLeft > fBorderLeft && objLeft < fBorderRight) {
     		if (objTop > fBorderTop && objTop < fBorderBottom) {
+                if (grabbedObjteam == 'frontend') {
+                    grabbedObj.offset({
+                        top: grabbedObjDefaultTop,
+                        left: grabbedObjDefaultLeft
+                    },300);
+                }   
     			alert('His place is in front-end team');
     		}
     	} 
@@ -55,7 +65,7 @@
     		}
     	} 
 
-
+        grabbedObj.removeClass('moving');
 
         grabbedObj = null;
     });

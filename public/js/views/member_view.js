@@ -38,6 +38,11 @@
 
 		close: function() {
 			var newName = this.$input.val();
+
+			if (newName.length == 0) {
+				return false;
+			}
+			
 			if (!this.$el.hasClass('editing')) {
 				return;
 			}

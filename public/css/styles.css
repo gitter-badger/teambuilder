@@ -331,3 +331,18 @@ label[for="frontend"] {
 .straight-sort {
 	border-right: 2px solid #F28E58;
 }
+
+.moving{
+	position:absolute;
+	z-index: 9999;
+	cursor:-webkit-grabbing;
+	cursor:-moz-grabbing;
+	width:100px;
+	border: 2px solid #F28E58;
+	-webkit-transition: .2s width;
+	transition: .2s width;
+}
+
+.moving .imgBox-class, .moving .destroyButton-class {
+	display:none;
+}
