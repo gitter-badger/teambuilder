@@ -27,7 +27,7 @@
 
 				drop: function (event, ui) {
 					that.$el.addClass("dropped-zone");
-					that.collection.on('remove', this.renderMembersList, this);
+					that.renderMembersList();
 				}
 			});
 		},
