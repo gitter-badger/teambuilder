@@ -109,6 +109,13 @@ html, body
 	background: #fff;
 }
 
+.membersCollection-class.active-drop-space {
+	border: 2px solid #F28E58;
+}
+.membersCollection-class.dropped-zone {
+	border: 2px solid #F28E58;	
+}
+
 #front-end
 {
 	margin-right:20px;
@@ -140,9 +147,14 @@ html, body
 	box-shadow: 		0px 1px 2px 0px rgba(50, 50, 50, 0.25);
 }
 
+.member-class.ui-draggable-dragging {
+	opacity:0.8;
+	z-index:9999999;
+}
+
 .member-class:hover
 {
-	border: 1px solid #F28E58;
+	border: 2px solid #F28E58;
 }
 
 .imgBox-class
@@ -174,7 +186,7 @@ html, body
 {
 	width: 30px;
 	height: 30px;
-	background: url(../img/closeicon.png) no-repeat;
+	background: url(../images/closeicon.png) no-repeat;
 	position: absolute;
 	top: 5px;
 	right: 5px;

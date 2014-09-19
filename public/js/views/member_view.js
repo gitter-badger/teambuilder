@@ -8,7 +8,6 @@
 
 		className: 'member-class',
 
-
 		events: {
 			"click .destroyButton-class": "remove",
 			"click .nameBox-class": "editName",
@@ -18,9 +17,28 @@
 		},
 
 		initialize: function() {
+			var that = this,
+				team;
+			this.model.on('change', this.render());
 			this.render();
-		},
+			this.$el.draggable({
+				cursor: "move",
 
+				revert: "invalid",
+				
+				start: function () {
+					team = that.model.get('team').toLowerCase();
+				},
+
+				stop: function() {
+					var teamName = $('.dropped-zone').find('h1').html().toLowerCase();
+					if (team !== teamName) {
+						that.model.save({team: teamName})
+					}
+					$('.dropped-zone').removeClass('dropped-zone');
+				}
+			});
+		},
 
 		render: function() {
 			this.$el.html(this.template(this.model.toJSON()));
@@ -47,8 +65,8 @@
 				return;
 			}
 
-			this.$('.nameBox-class').text(newName);
 			this.model.save({name: newName});
+			this.render();
 			this.$el.removeClass('editing');
 		},
 
