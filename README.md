@@ -1,5 +1,6 @@
 teambuilder
 ===========
+[![Gitter](https://badges.gitter.im/Join Chat.svg)](https://gitter.im/azaytc/teambuilder?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 Features:
  1. Browse development teams
  
